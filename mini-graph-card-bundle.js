@@ -28,7 +28,12 @@ class ContentCardExample extends HTMLElement {
       `;
       this.content = this.querySelector("div");
     }
-    if(this.config.entity){
+    if(this.config.testo_h1){
+      this.content.innerHTML = `
+        Testo ${this.config.testo_h1}
+      `;
+    }
+    /* if(this.config.entity){
       const entityId = this.config.entity;
       const state = hass.states[entityId];
       const stateStr = state ? state.state : "unavailable";
@@ -38,7 +43,7 @@ class ContentCardExample extends HTMLElement {
         <br><br>
         <img src="http://via.placeholder.com/350x150">
       `;
-    }
+    } */
 
   }
 

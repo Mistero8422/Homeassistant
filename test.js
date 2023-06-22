@@ -14,7 +14,7 @@ static get properties() {
 
 constructor() {
 	super();
-	this.name = '';
+	this.testo_h1 = '';
 }
 
 static get styles() {
@@ -28,18 +28,18 @@ render(){
   console.log(this._hass);
 	return html`
 	<ha-card>
-<input name="TTT" @change=${this.updateText} value="${this.config.name}" />
+<input @change=${this.updateText} value="${this.config.testo_h1}" />
     <button @click="${this.Save}">Save</button>
 	</ha-card>
 `;
 }
 updateText(e) {
 	e.stopPropagation();
-	this.name =  e.target.value;
+	this.testo_h1 =  e.target.value;
 }
 
 async Save() {
-  var newConfig = {...this.config, ...{nome: this.name}}
+  var newConfig = {...this.config, ...{testo_h1: this.testo_h1}}
   
   const event = new Event("config-changed", {
     bubbles: true,
